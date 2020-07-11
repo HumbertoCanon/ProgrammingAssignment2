@@ -14,7 +14,11 @@
 ##  Two Function will be created:
 ##
 ##  1.  `makeCacheMatrix`: This function creates a special "matrix" object
-##  that can cache its inverse.
+##  that can cache its inverse. This is list containing a function to:
+##        set the value of the matrix   ('set')
+##        get the value of the matrix   ('get')
+##        set the value of the inverse  ('setInvrs')
+##        get the value of the inverse  ('getInvrs')
 
 makeCacheMatrix <- function(x = matrix())
     {
@@ -33,7 +37,9 @@ makeCacheMatrix <- function(x = matrix())
 ##  2.  `cacheSolve`: This function computes the inverse of the special
 ##  "matrix" returned by `makeCacheMatrix` above. If the inverse has
 ##  already been calculated (and the matrix has not changed), then
-##  `cacheSolve` should retrieve the inverse from the cache.
+##  `cacheSolve` should retrieve the inverse from the cache with the
+##  message "getting cached date" .  Inverse is calculated using function
+##  'solve()'
 
 cacheSolve <- function(x, ...) 
     {
